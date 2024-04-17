@@ -6,7 +6,6 @@ import {AppComponent} from './app.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {NgIf} from "@angular/common";
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {SharedModule} from "./shared/shared.module";
 import {HeaderComponent} from "./shared/layout/header/header.component";
 import {FooterComponent} from "./shared/layout/footer/footer.component";
@@ -25,7 +24,6 @@ import {LayoutComponent} from "./features/layout.component";
     ReactiveFormsModule,
     HttpClientModule,
     NgIf,
-    NgbModule,
     SharedModule,
     AppRoutingModule
   ],
