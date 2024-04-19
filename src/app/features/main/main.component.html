@@ -47,15 +47,13 @@
       </div>
     </div>
   </div>
-  <div class="modal" tabindex="-1" role="dialog" id="modal">
-    <div class="modal-dialog" role="document">
+  <ng-template #modal>
       <div class="modal-content p-5 text-center">
           <h5 class="modal-title fs-4 mb-4">Посмотрите наши чайные коллекции</h5>
         <div>
           <a [routerLink]="['/products']" class="btn btn-primary me-4">Смотреть</a>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnModalClose">Закрыть</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalClose()">Закрыть</button>
         </div>
       </div>
-    </div>
-  </div>
+  </ng-template>
 </div>

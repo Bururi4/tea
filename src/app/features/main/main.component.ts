@@ -1,5 +1,7 @@
+import {NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
+
 declare var $: any;
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {Observable, Subscription} from "rxjs";
 
 @Component({
@@ -8,11 +10,11 @@ import {Observable, Subscription} from "rxjs";
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit, OnDestroy {
-
+  @ViewChild('modal') private modal!: TemplateRef<any>;
+  private modalRef!: NgbModalRef;
   private observable: Observable<any>;
-  private modal: HTMLElement | null = document.getElementById('modal');
 
-  constructor() {
+  constructor(private modalService: NgbModal) {
     $(document).ready(function () {
       $('.accordion').accordion({
         active: true,
@@ -23,7 +25,7 @@ export class MainComponent implements OnInit, OnDestroy {
 
     this.observable = new Observable((observer) => {
       setTimeout(() => {
-        observer.next(document.getElementById('modal'))
+        observer.next()
       }, 10000)
     })
   }
@@ -31,20 +33,21 @@ export class MainComponent implements OnInit, OnDestroy {
   private subscription: Subscription | null = null;
 
   ngOnInit(): void {
-    this.subscription = this.observable.subscribe((modal: HTMLElement) => {
-      modal!.style.display = 'block'
+    this.subscription = this.observable.subscribe(() => {
+      this.modalRef = this.modalService.open(this.modal);
     })
     this.modalClose();
   }
 
   modalClose() {
-    document.getElementById('btnModalClose')!.onclick = () => {
-      document.getElementById('modal')!.style.display = 'none';
+    if (this.modalRef) {
+      this.modalRef.close();
       this.subscription?.unsubscribe();
     }
   }
 
   ngOnDestroy() {
+    this.modalRef.close();
     this.subscription?.unsubscribe();
   }
 }
