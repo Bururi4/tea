@@ -1,0 +1,112 @@
+<div class="container">
+  <h3 class="text-center my-5 fw-bold">Сделать заказ</h3>
+  <form [formGroup]="orderForm" class="mb-5" id="form">
+
+    <div class="row mb-3 mx-auto gx-4 gy-3">
+      <div class="col-6">
+        <div class="mb-2">Имя</div>
+        <input type="text" class="form-control" id="name" formControlName="name">
+        <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+          <div class="text-danger" *ngIf="name?.errors?.['required']">
+            Имя содержать только буквы.
+          </div>
+          <div class="text-danger" *ngIf="name?.errors?.['pattern']">
+            Имя введено некорректно.
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="mb-2">Фамилия</div>
+        <input type="text" class="form-control" id="surname" formControlName="last_name">
+        <div *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)">
+          <div class="text-danger" *ngIf="lastName?.errors?.['required']">
+            Фамилия содержать только буквы.
+          </div>
+          <div class="text-danger" *ngIf="lastName?.errors?.['pattern']">
+            Фамилия введена некорректна.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-3 mx-auto gx-4 gy-3">
+      <div class="col-6">
+        <div class="mb-2">Товар</div>
+        <input type="text" class="form-control" id="product" formControlName="product">
+      </div>
+      <div class="col-6">
+        <div class="mb-2">Телефон</div>
+        <input type="text" class="form-control" id="phone" formControlName="phone">
+        <div *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)">
+          <div class="text-danger" *ngIf="phone?.errors?.['required']">
+            Номер должен содержать 11 цифр.
+          </div>
+          <div class="text-danger" *ngIf="phone?.errors?.['pattern']">
+            Номер введён некорректно.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-3 mx-auto gx-4 gy-3">
+      <div class="col-6">
+        <div class="mb-2">Страна</div>
+        <input type="text" class="form-control" id="country" formControlName="country">
+        <div *ngIf="country?.invalid && (country?.dirty || country?.touched)">
+          <div class="text-danger" *ngIf="country?.errors?.['required']">
+            Страна может содержать только буквы.
+          </div>
+          <div class="text-danger" *ngIf="country?.errors?.['pattern']">
+            Страна указана некорректно.
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="mb-2">Индекс</div>
+        <input type="text" class="form-control" id="index" formControlName="zip">
+        <div *ngIf="zip?.invalid && (zip?.dirty || zip?.touched)">
+          <div class="text-danger" *ngIf="zip?.errors?.['required']">
+            Индекс должен состоять из 6 цифр.
+          </div>
+          <div class="text-danger" *ngIf="zip?.errors?.['pattern']">
+            Индекс указан некорректно.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-4 mx-auto gx-4 gy-3 row-cols-1">
+      <div class="col-12">
+        <div class="mb-2">Адрес</div>
+        <input type="text" class="form-control" id="address" formControlName="address">
+        <div *ngIf="address?.invalid && (address?.dirty || address?.touched)">
+          <div class="text-danger" *ngIf="address?.errors?.['required']">
+            Адрес может содержать только буквы, цифры, пробелы, - и /.
+          </div>
+          <div class="text-danger" *ngIf="address?.errors?.['pattern']">
+            Адрес указан некорректно.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-4 mx-auto gx-4 gy-3 row-cols-1">
+      <div class="col-12">
+        <div class="mb-2">Комментарий к заказу</div>
+        <input type="text" class="form-control" id="comment" formControlName="comment">
+      </div>
+    </div>
+
+    <div class="row mx-auto gx-4 gy-3">
+      <div class="col mt-4">
+        <button type="button" class="btn btn-primary px-5" id="send" (click)="sendForm()">Отправить</button>
+      </div>
+      <div class="text-danger" id="form-errors">
+        Произошла ошибка. Попробуйте еще раз.
+      </div>
+    </div>
+  </form>
+  <div class="text mb-5 fs-4 text-center" id="text">
+    Спасибо за заказ. Мы свяжемся с вами в ближайшее время!
+  </div>
+</div>

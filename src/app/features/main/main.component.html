@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="single-item mt-5">
+    <div>
+      <img src="../../../assets/images/image-1.png" alt="First-image" class="mw-100 h-auto" id="image">
+    </div>
+  </div>
+  <h3 class="text-center my-5 fw-bold">Ответы на часто задаваемые вопросы</h3>
+  <div class="accordion border border-0 mx-auto" style="max-width: 856px">
+    <div class="accordion-item border border-0 mb-3">
+      <div class="accordion-header py-4 px-4 border border-0 rounded text-bg-primary fw-bold">Собираете ли вы
+        подарочные боксы?
+      </div>
+      <div class="border border-0 py-4 px-4 rounded">Да, у нас есть такая услуга. Мы можем собрать подарочный бокс
+        на любой вкус, объем и стоимость!
+      </div>
+    </div>
+    <div class="accordion-item border border-0 mb-3">
+      <div class="accordion-header py-4 px-4 border border-0 rounded text-bg-primary fw-bold">Сколько у вас
+        разновидностей чая?
+      </div>
+      <div class="border border-0 py-4 px-4 rounded">Да, у нас есть такая услуга. Мы можем собрать подарочный бокс
+        на любой вкус, объем и стоимость!
+      </div>
+    </div>
+    <div class="accordion-item border border-0 mb-3">
+      <div class="accordion-header py-4 px-4 border border-0 rounded text-bg-primary fw-bold">В какой срок
+        осуществляется доставка?
+      </div>
+      <div class="border border-0 py-4 px-4 rounded">Да, у нас есть такая услуга. Мы можем собрать подарочный бокс
+        на любой вкус, объем и стоимость!
+      </div>
+    </div>
+    <div class="accordion-item border border-0 mb-3">
+      <div class="accordion-header py-4 px-4 border border-0 rounded text-bg-primary fw-bold">У вас обновляется
+        ассортимент?
+      </div>
+      <div class="border border-0 py-4 px-4 rounded">Да, у нас есть такая услуга. Мы можем собрать подарочный бокс
+        на любой вкус, объем и стоимость!
+      </div>
+    </div>
+    <div class="accordion-item border border-0 mb-3">
+      <div class="accordion-header py-4 px-4 border border-0 rounded text-bg-primary fw-bold">Какого объема у вас
+        пачки чая?
+      </div>
+      <div class="border border-0 py-4 px-4 rounded">Да, у нас есть такая услуга. Мы можем собрать подарочный бокс
+        на любой вкус, объем и стоимость!
+      </div>
+    </div>
+  </div>
+  <ng-template #modal>
+      <div class="modal-content p-5 text-center">
+          <h5 class="modal-title fs-4 mb-4">Посмотрите наши чайные коллекции</h5>
+        <div>
+          <a [routerLink]="['/products']" class="btn btn-primary me-4">Смотреть</a>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalClose()">Закрыть</button>
+        </div>
+      </div>
+  </ng-template>
+</div>

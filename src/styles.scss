@@ -1,0 +1,98 @@
+.nav-link {
+  --bs-nav-link-color: rgb(0 0 0 / 60%);
+  --bs-nav-link-hover-color: rgb(0 0 0);
+}
+
+.form-control::placeholder {
+  color: rgb(0 0 0 / 60%);
+}
+
+.slick-prev {
+  left: 15px;
+}
+
+.slick-next {
+  right: 35px;
+}
+
+.slick-prev, .slick-next {
+  z-index: 1;
+}
+
+.slick-prev:before, .slick-next:before {
+  opacity: 1;
+}
+
+.slick-prev::before {
+  content: url("./assets/images/prev.svg");
+}
+
+.slick-next::before {
+  content: url("./assets/images/next.svg");
+}
+
+@media screen and (max-width: 767px) {
+  .slick-prev {
+    left: 10px;
+  }
+
+  .slick-next {
+    right: 30px;
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .slick-next {
+    right: 25px;
+  }
+
+  .slick-prev {
+    left: 5px;
+  }
+}
+
+.card {
+  border: 1px solid #E3E3E3;
+}
+
+.accordion .ui-accordion-header {
+  position: relative;
+}
+
+.accordion .ui-accordion-header-icon {
+  content: '';
+  position: absolute;
+  top: calc(50% - 5px);
+  right: 30px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(./assets/images/down.png) 50% 50% no-repeat;
+}
+
+.accordion .ui-accordion-header-active .ui-accordion-header-icon {
+  background-image: url(./assets/images/up.png);
+}
+
+.text {
+  display: none;
+}
+
+.form {
+  max-width: 636px;
+  margin: 0 auto;
+}
+
+.accordion-header {
+  padding-right: 60px !important;
+}
+
+#form-errors {
+  display: none;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
